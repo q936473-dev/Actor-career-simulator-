@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Georgia", serif;
+  
+  --color-gold: #D4AF37;
+  --color-bg-deep: #050505;
+  --color-bg-elevated: #0A0A0A;
+  --color-border-subtle: #1F1F1F;
+  --color-text-primary: #E0E0E0;
+  --color-text-secondary: #888888;
+  --color-text-muted: #666666;
+}
+
+body {
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.logo-font {
+  font-family: var(--font-display);
+  font-style: italic;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+}
+
+.stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 16px;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.portrait-box {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #111;
+  border: 1px solid #222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-bg {
+  height: 6px;
+  background: #1A1A1A;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--color-gold);
+}
+
+.active-project-card {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+              repeating-linear-gradient(45deg, #050505, #050505 10px, #080808 10px, #080808 20px);
+  border: 1px solid #222;
+  border-radius: 8px;
+}
+
+.feed-item-style {
+  font-size: 13px;
+  line-height: 1.4;
+  padding-bottom: 12px;
+  border-bottom: 1px dotted #222;
+}
+
+.action-btn-styled {
+  padding: 12px 30px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #AAA;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.action-btn-styled:hover:not(:disabled) {
+  border-color: #555;
+  color: #FFF;
+}
+
+.action-btn-primary {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #000;
+  font-weight: bold;
+}
+
+.action-btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+  color: #000;
+}
+
+.camera-flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+}
+
+/* Custom layout classes to match the theme design */
+.app-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  grid-template-rows: 80px 1fr 100px;
+  min-height: 100vh;
+}
+
+@media (max-width: 1024px) {
+  .app-grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}
+
